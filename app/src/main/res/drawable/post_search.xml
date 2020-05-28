@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="78dp"
+    android:height="71.71dp"
+    android:viewportWidth="78"
+    android:viewportHeight="71.71">
+
+    <group
+            android:name="Layer_2">
+        <group
+                android:name="Layer_1-2">
+            <group
+                    android:name="그룹_4">
+                <path
+                    android:name="타원_3"
+                    android:strokeColor="#5a4dab"
+                    android:strokeWidth="6"
+                    android:strokeLineJoin="round"
+                    android:strokeLineCap="round"
+                    android:pathData="M 31.48 3 C 47.2090696752 3 59.96 15.7509303248 59.96 31.48 C 59.96 47.2090696752 47.2090696752 59.96 31.48 59.96 C 15.7509303248 59.96 3 47.2090696752 3 31.48 C 3 15.7509303248 15.7509303248 3 31.48 3 Z" />
+                <path
+                    android:name="선_1"
+                    android:strokeColor="#5a4dab"
+                    android:strokeWidth="6"
+                    android:strokeLineJoin="round"
+                    android:strokeLineCap="round"
+                    android:pathData="M 75 68.71 L 54.71 48.42" />
+            </group>
+        </group>
+    </group>
+</vector>

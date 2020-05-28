@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="88.19dp"
+    android:height="80.54dp"
+    android:viewportWidth="88.19"
+    android:viewportHeight="80.54">
+
+    <group
+            android:name="Layer_2">
+        <group
+                android:name="Layer_1-2">
+            <path
+                android:name="패스_5"
+                android:fillColor="#ff2570"
+                android:pathData="M65.29,0A22.91,22.91,0,0,0,44.1,14.22,22.91,22.91,0,0,0,0,22.92C0,35.57,8.75,48.59,17.69,57.53c11,11,26.4,23,26.4,23S64.31,63.66,73.71,54.25c8.94-8.94,14.48-18.68,14.48-31.33A22.92,22.92,0,0,0,65.29,0Z" />
+        </group>
+    </group>
+</vector>

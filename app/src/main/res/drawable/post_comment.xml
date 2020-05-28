@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="93.91dp"
+    android:height="83.78dp"
+    android:viewportWidth="93.91"
+    android:viewportHeight="83.78">
+
+    <group
+            android:name="Layer_2">
+        <group
+                android:name="Layer_1-2">
+            <path
+                android:name="패스_8"
+                android:fillColor="#fff"
+                android:strokeColor="#5a4dab"
+                android:strokeWidth="6"
+                android:strokeLineJoin="round"
+                android:strokeLineCap="round"
+                android:pathData="M69.48,3H24.43A21.49,21.49,0,0,0,3,24.43V41.65A21.48,21.48,0,0,0,24.43,63.07H44.34L54.56,80.78,64.79,63.07h4.69A21.49,21.49,0,0,0,90.91,41.65V24.43A21.5,21.5,0,0,0,69.48,3Z" />
+        </group>
+    </group>
+</vector>
