@@ -29,15 +29,14 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/backbtn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="left"
-            android:layout_marginLeft="10dp"
-            android:background="@android:color/transparent"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/mypage_backbtn" />
+    <ImageView
+        android:id="@+id/mypage_backBtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        app:srcCompat="@drawable/post_backbtn" />
 
         <ImageButton
             android:layout_marginLeft="305dp"
@@ -85,38 +84,63 @@
             android:weightSum="3" />
 
     </RelativeLayout>
-
-
-
     <LinearLayout
         android:id="@+id/bar"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-
         android:orientation="horizontal">
+<!--        <androidx.viewpager.widget.ViewPager-->
+<!--            xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--            android:id="@+id/pager"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent" >-->
 
+<!--        <com.google.android.material.tabs.TabLayout-->
+<!--            android:id="@+id/tab_layout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content" />-->
 
-        <android.support.design.widget.TabLayout
-            android:id="@+id/layout_tab"
+<!--    </androidx.viewpager.widget.ViewPager>-->
+        <Button
+            android:id="@+id/likebtn"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:tabGravity="center"
-            app:tabMode="fixed"
-            app:tabTextColor="#000000"
-            app:tabSelectedTextColor="@color/colorPrimary"
-            app:tabIndicatorColor="@color/colorPrimary"/>
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/mypage_likebtn_before"
+            android:drawablePadding="15dp"
+            android:paddingLeft="20dp"
+            android:text="좋아요"
+            android:textAlignment="textStart"
+            android:textSize="18sp" />
 
-        <android.support.v4.view.ViewPager
-            android:id="@+id/pager_content"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+        <Button
+            android:id="@+id/mediabtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/mypage_mediabtn_before"
+            android:drawablePadding="15dp"
+            android:paddingLeft="20dp"
+            android:text="미디어"
+            android:textAlignment="textStart"
+            android:textSize="18sp" />
 
-    </LinearLayout>
-    <Button
-        android:id="@+id/add_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="추가"/>
+        <Button
+            android:id="@+id/writebtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/mypage_writebtn_before"
+            android:drawablePadding="15dp"
+            android:paddingLeft="20dp"
+            android:text="글"
+            android:textAlignment="textStart"
+            android:textSize="18sp" />
+
+</LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">

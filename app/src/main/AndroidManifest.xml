@@ -7,27 +7,26 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_reday"
         android:label="reDay"
         android:roundIcon="@mipmap/ic_launcher_reday"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".WriteActivity"></activity>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".CommentActivity"></activity>
+        <activity android:name=".WriteActivity" />
         <activity
             android:name=".GuideActivity"
             android:noHistory="true"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SplashActivity"
             android:noHistory="true"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".SignUpActivity"></activity>
-        <activity android:name=".MainActivity">
-        </activity>
-        <activity android:name=".SignInActivity"></activity>
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".SignInActivity" />
         <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,8 +34,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListActivity"></activity>
-        <activity android:name=".MypageActivity"></activity>
+        <activity android:name=".ListActivity" />
+        <activity android:name=".MypageActivity" />
     </application>
 
 </manifest>

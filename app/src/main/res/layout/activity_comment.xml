@@ -2,7 +2,7 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/list_layout"
+    android:id="@+id/select_contect_layout"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -30,55 +30,56 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-40dp"
             android:gravity="center"
-            android:text="서울"
+            android:text="댓글"
             android:textColor="@color/colorMain"
             android:textSize="24sp" />
-
-        <ImageView
-            android:id="@+id/post_search"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="right"
-            android:layout_marginTop="-30dp"
-            android:layout_marginRight="60dp"
-            app:srcCompat="@drawable/post_search" />
-
-        <ImageView
-            android:id="@+id/post_mypage"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="-30dp"
-            android:layout_gravity="right"
-            android:layout_marginRight="10dp"
-            app:srcCompat="@drawable/post_mypage" />
     </LinearLayout>
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:paddingRight="10dp"
         android:paddingLeft="10dp"
         android:background="@color/white">
-
-
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView1"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_comment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scrollbarAlwaysDrawVerticalTrack="true"
             />
-
-
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/postingbtn"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_gravity="bottom|right"
-            android:layout_marginBottom="20dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/post_posting" />
-
-
-
     </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/enter_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/mypage_profileimg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/homebtnimg_11"
+            app:civ_border_color="#B9B9B9"
+            app:civ_border_width="2dp" />
+
+        <EditText
+            android:id="@+id/UserComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="-30dp"
+            android:background="@android:color/transparent"
+            android:textSize="14sp"
+            android:hint="댓글 달기 ...."
+            android:textColorHint="#032149"/>
+
+
+    </LinearLayout>
+
 
 </LinearLayout>

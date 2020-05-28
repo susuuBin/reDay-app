@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,6 +39,14 @@ public class MypageActivity extends AppCompatActivity {
     arrayList =new ArrayList<>();
     mypageAdapter =new MypageAdapter(arrayList);
     recyclerView.setAdapter(mypageAdapter);
+
+        ImageView mypage_backBtn = findViewById(R.id.mypage_backBtn);
+        mypage_backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 
 }

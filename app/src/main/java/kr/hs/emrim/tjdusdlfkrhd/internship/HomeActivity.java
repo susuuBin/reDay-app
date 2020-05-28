@@ -52,7 +52,7 @@ public class HomeActivity extends AppCompatActivity {
                 saveuserinfo();
                 // 저장된 값을 불러오기 위해 같은 네임파일을 찾음.
                 Log.d("mytag", "앱 실행 시 유저 정보: "+LoginUserInfo.getString("username",null));
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), MypageActivity.class));
             }
         });
     }
