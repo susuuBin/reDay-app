@@ -67,17 +67,15 @@ public class MypageActivity extends AppCompatActivity {
         // 첫 번째 Tab. (탭 표시 텍스트:"TAB 1"), (페이지 뷰:"content1")
         TabHost.TabSpec ts1 = tabHost1.newTabSpec("Tab Spec 1") ;
         ts1.setContent(R.id.좋아요) ;
-        ts1.setIndicator("TAB 1") ;
+        ts1.setIndicator("좋아요",getResources().getDrawable(R.drawable.toggle_mypage_heart));
         tabHost1.addTab(ts1)  ;
 
         // 두 번째 Tab. (탭 표시 텍스트:"TAB 2"), (페이지 뷰:"content2")
         TabHost.TabSpec ts2 = tabHost1.newTabSpec("Tab Spec 2") ;
         ts2.setContent(R.id.글) ;
-        ts2.setIndicator("TAB 2") ;
+        ts2.setIndicator("글",getResources().getDrawable(R.drawable.toggle_mypage_write));
         tabHost1.addTab(ts2) ;
 
-        ts1.setIndicator("",getResources().getDrawable(R.drawable.toggle_mypage_heart));
-        ts2.setIndicator("",getResources().getDrawable(R.drawable.toggle_mypage_write));
     }
 
 }
