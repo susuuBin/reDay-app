@@ -28,19 +28,18 @@ public class ListActivity extends AppCompatActivity {
     LinearLayout list;
     private Retrofit retrofit;
     private ImageView postingbtn;
-    private ImageView comment_btn;
     private ImageView post_backBtn;
     private ImageView mypageBtn;
     public List<Article> articles;
     RecyclerView mRecyclerView;
+    LinearLayout usercontent;
 
-    LinearLayout contentBox;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        contentBox = (LinearLayout) findViewById(R.id.contentBox);
+        usercontent = (LinearLayout) findViewById(R.id.container);
 
         retrofit = new Retrofit.Builder().baseUrl(RedayService.URL).addConverterFactory(GsonConverterFactory.create()).build();
         final RedayService apiService = retrofit.create(RedayService.class);
@@ -76,7 +75,7 @@ public class ListActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // 저장된 값을 불러오기 위해 같은 네임파일을 찾음.
 //                Log.d("mytag", "앱 실행 시 유저 정보: "+LoginUserInfo.getString("username",null));
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                startActivity(new Intent(getApplicationContext(), MypageActivity.class));
             }
         });
 
@@ -96,7 +95,7 @@ public class ListActivity extends AppCompatActivity {
             }
         });
 
-//        comment_btn = findViewById(R.id.comment_btn);
+//        ImageView comment_btn = findViewById(R.id.comment_btn);
 //        comment_btn.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {

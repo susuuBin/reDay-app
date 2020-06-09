@@ -23,6 +23,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         protected TextView heart;
         protected TextView re_image;
 
+
          public CustomViewHolder(View view){
             super(view);
              re_username= itemView.findViewById(R.id.re_username);

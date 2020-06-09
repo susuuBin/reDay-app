@@ -40,6 +40,7 @@
     </LinearLayout>
     
     <LinearLayout
+        android:id="@+id/usercontent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -68,7 +69,7 @@
             android:text="게시글이 나옵니다!"/>
 
         <ImageView
-            android:id="@+id/re_image"
+            android:id="@+id/file_location"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_marginLeft="20dp"
@@ -99,19 +100,6 @@
                 android:layout_margin="10dp"
                 android:text="10,128"/>
 
-            <ImageView
-                android:id="@+id/comment_btn"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/post_comment" />
-            <TextView
-                android:id="@+id/count_comment"
-                android:layout_width="wrap_content"
-                 android:layout_margin="10dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="13,502"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

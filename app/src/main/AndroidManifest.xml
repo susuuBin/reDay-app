@@ -14,26 +14,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".CommentActivity"></activity>
-        <activity android:name=".WriteActivity" />
-        <activity
-            android:name=".GuideActivity"
-            android:noHistory="true"
-            android:screenOrientation="portrait" />
         <activity
             android:name=".SplashActivity"
             android:noHistory="true"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".SignInActivity" />
-        <activity android:name=".HomeActivity">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".CommentActivity" />
+        <activity android:name=".WriteActivity" />
+        <activity
+            android:name=".GuideActivity"
+            android:noHistory="true"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SignInActivity" />
+        <activity android:name=".HomeActivity" />
         <activity android:name=".ListActivity" />
         <activity android:name=".MypageActivity" />
     </application>
