@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -19,14 +18,14 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SignInActivity extends AppCompatActivity {
+    public String email;
 
     SharedPreferences LoginUserInfo;
     SharedPreferences.Editor editor;
 
     RedayService apiService;
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
 
@@ -74,7 +73,6 @@ public class SignInActivity extends AppCompatActivity {
                                 editor.putString("password",userpassword);
                                 // 유저 이름 저장하는 함수.
                                 saveuserinfo();
-
                                 editor.commit();
                                 Log.d("mytag", LoginUserInfo.getString("email",null)+", "+LoginUserInfo.getString("password",null));
                                 startActivity(new Intent(getApplicationContext(), HomeActivity.class));
@@ -96,6 +94,7 @@ public class SignInActivity extends AppCompatActivity {
                             Toast.makeText(SignInActivity.this, "에러!", Toast.LENGTH_SHORT).show();
                         }
                     });
+
                 }
 
             }
@@ -115,10 +114,12 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 User user = response.body();
-                String name = user.getUserName();
-                editor.putString("username", name);
+                String nickname = user.getUserNickname();
+                String email = user.getEmail();
+                editor.putString("nickname", nickname);
+                editor.putString("email", email);
                 editor.commit();
-                Log.d("mytag", "username: "+name);
+                //Log.d("mytag", "username: "+nickname +"email"+email);
             }
 
             @Override

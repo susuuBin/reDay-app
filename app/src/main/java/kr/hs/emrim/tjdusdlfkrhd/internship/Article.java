@@ -1,27 +1,23 @@
 package kr.hs.emrim.tjdusdlfkrhd.internship;
 
+import android.graphics.Bitmap;
+
 import okhttp3.MultipartBody;
 
 public class Article {
-    private int id;
+    private long id;
     private String title;
     private String contents;
-    //private int heart;
-    private MultipartBody.Part file;
+    private Integer heart;
+    private String fileLocation;
+    private User user;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
-    }
-
-    public String getContents() {
-        return contents;
-    }
-    public void setContents(String contents) {
-        this.contents = contents;
     }
 
     public String getTitle() {
@@ -32,32 +28,48 @@ public class Article {
         this.title = title;
     }
 
+    public String getContents() {
+        return contents;
+    }
 
+    public void setContents(String contents) {
+        this.contents = contents;
+    }
 
-/*    public int getHeart() {
+    public Integer getHeart() {
         return heart;
     }
 
-    public void setHeart(int heart) {
+    public void setHeart(Integer heart) {
         this.heart = heart;
     }
-    }
-*/
-    public MultipartBody.Part getFile() {
-        return file;
 
+    public String getFileLocation() {
+        return fileLocation;
     }
-    public void setFile(MultipartBody.Part file) {
-        this.file = file;
+
+    public void setFileLocation(String fileLocation) {
+        this.fileLocation = fileLocation;
     }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     @Override
     public String toString() {
         return "Article{" +
                 "id=" + id +
                 ",title="+title+
-                ", contents='" + contents + '\'' +
-               // ", heart=" + heart +
-                ", file=" + file +
+                ", contents='" + contents  +
+                ", heart=" + heart +
+                ", fileLocation=" + fileLocation +
                 '}';
     }
 }
+
+

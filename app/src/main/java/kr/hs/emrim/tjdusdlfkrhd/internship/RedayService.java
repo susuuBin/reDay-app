@@ -37,4 +37,10 @@ public interface RedayService {
 
     @GET("/articles")
     Call<List<Article>> readArticlesDataAll();
+
+    @GET("all_countries")
+    Call<List<Countries>> readCountriesDataAll();
+
+    @GET("{country}/articles")
+    Call<List<Article>> readCountryAtriclesDataAll(@Path("country") String country);
 }
