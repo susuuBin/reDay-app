@@ -8,6 +8,7 @@ public class Article {
     private String contents;
     //private int heart;
     private MultipartBody.Part file;
+    private int country_id;
 
     public int getId() {
         return id;
@@ -32,7 +33,13 @@ public class Article {
         this.title = title;
     }
 
+    public int getCountry_id() {
+        return country_id;
+    }
 
+    public void setCountry_id(int country_id) {
+        this.country_id = country_id;
+    }
 
 /*    public int getHeart() {
         return heart;
@@ -54,7 +61,8 @@ public class Article {
     public String toString() {
         return "Article{" +
                 "id=" + id +
-                ",title="+title+
+                ", country_id=" + country_id +
+                ",title=" + title +
                 ", contents='" + contents + '\'' +
                // ", heart=" + heart +
                 ", file=" + file +

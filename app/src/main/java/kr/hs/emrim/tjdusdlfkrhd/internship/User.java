@@ -1,6 +1,6 @@
 package kr.hs.emrim.tjdusdlfkrhd.internship;
 
-public class User {
+public class  User {
     private int id;
     private String userName;
     private String userNickname;
