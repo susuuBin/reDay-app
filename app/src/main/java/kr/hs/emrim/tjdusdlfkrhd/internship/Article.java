@@ -1,23 +1,27 @@
 package kr.hs.emrim.tjdusdlfkrhd.internship;
 
-import android.graphics.Bitmap;
-
 import okhttp3.MultipartBody;
 
 public class Article {
-    private long id;
+    private int id;
     private String title;
     private String contents;
-    private Integer heart;
-    private String fileLocation;
-    private User user;
+    //private int heart;
+    private MultipartBody.Part file;
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
+    }
+
+    public String getContents() {
+        return contents;
+    }
+    public void setContents(String contents) {
+        this.contents = contents;
     }
 
     public String getTitle() {
@@ -28,48 +32,32 @@ public class Article {
         this.title = title;
     }
 
-    public String getContents() {
-        return contents;
-    }
 
-    public void setContents(String contents) {
-        this.contents = contents;
-    }
 
-    public Integer getHeart() {
+/*    public int getHeart() {
         return heart;
     }
 
-    public void setHeart(Integer heart) {
+    public void setHeart(int heart) {
         this.heart = heart;
     }
-
-    public String getFileLocation() {
-        return fileLocation;
     }
+*/
+    public MultipartBody.Part getFile() {
+        return file;
 
-    public void setFileLocation(String fileLocation) {
-        this.fileLocation = fileLocation;
     }
-
-    public User getUser() {
-        return user;
+    public void setFile(MultipartBody.Part file) {
+        this.file = file;
     }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     @Override
     public String toString() {
         return "Article{" +
                 "id=" + id +
                 ",title="+title+
-                ", contents='" + contents  +
-                ", heart=" + heart +
-                ", fileLocation=" + fileLocation +
+                ", contents='" + contents + '\'' +
+               // ", heart=" + heart +
+                ", file=" + file +
                 '}';
     }
 }
-
-
