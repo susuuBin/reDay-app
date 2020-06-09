@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder> {
-    private ArrayList<Article> mList;
+    private ArrayList<Countries> mList;
 
     public class HomeViewHolder extends RecyclerView.ViewHolder {
         protected TextView country_id;
@@ -24,7 +24,7 @@ class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewHolder> {
         }
     }
 
-    public HomeAdapter(ArrayList<Article> list){
+    public HomeAdapter(ArrayList<Countries> list){
         this.mList = list;
     } //들어갈 list
 

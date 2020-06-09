@@ -2,6 +2,7 @@ package kr.hs.emrim.tjdusdlfkrhd.internship;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -26,21 +27,23 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HomeTestActivity extends AppCompatActivity {
     LinearLayout home;
-    private Retrofit retrofit;
     private ImageView home_icon;
     private ImageView postingbtn;
     RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     RecyclerView.LayoutManager mLayoutManager;
-    public List<Article> articles;
+    public List<Countries> countries;
+
+    SharedPreferences LoginUserInfo;
+    SharedPreferences.Editor editor;
+
+    Retrofit retrofit = (new Retrofit.Builder()).baseUrl(RedayService.URL).addConverterFactory(GsonConverterFactory.create()).build();
+    final RedayService apiService = retrofit.create(RedayService.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_test);
-
-        retrofit = new Retrofit.Builder().baseUrl(RedayService.URL).addConverterFactory(GsonConverterFactory.create()).build();
-        final RedayService apiService = retrofit.create(RedayService.class);
 
         mRecyclerView = findViewById(R.id.home_recyclerView);
         LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(this);
@@ -48,21 +51,21 @@ public class HomeTestActivity extends AppCompatActivity {
 
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(mRecyclerView.getContext(), mLinearLayoutManager.getOrientation());
         mRecyclerView.addItemDecoration(dividerItemDecoration);
-        final Call<List<Article>> apiCall = apiService.readArticlesDataAll();
+        final Call<List<Countries>> apiCall = apiService.readCountriesDataAll();
 
-        apiCall.enqueue(new Callback<List<Article>>() {
+        apiCall.enqueue(new Callback<List<Countries>>() {
             @Override
-            public void onResponse(Call<List<Article>> call, Response<List<Article>> response) {
-                articles = response.body();
+            public void onResponse(Call<List<Countries>> call, Response<List<Countries>> response) {
+                countries = response.body();
 
-                CustomAdapter mAdapter = new CustomAdapter((ArrayList) articles);
+                CustomAdapter mAdapter = new CustomAdapter((ArrayList) countries);
                 mRecyclerView.setAdapter(mAdapter);
 
-                Log.d("mytag", articles.toString());
+                Log.d("mytag", countries.toString());
             }
 
             @Override
-            public void onFailure(Call<List<Article>> call, Throwable t) {
+            public void onFailure(Call<List<Countries>> call, Throwable t) {
                 Log.d("mytag", "fail" + t.getMessage());
             }
         });
@@ -71,8 +74,9 @@ public class HomeTestActivity extends AppCompatActivity {
         home_icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                saveuserinfo();
                 // 저장된 값을 불러오기 위해 같은 네임파일을 찾음.
-//                Log.d("mytag", "앱 실행 시 유저 정보: "+LoginUserInfo.getString("username",null));
+                Log.d("mytag", "앱 실행 시 유저 정보: "+LoginUserInfo.getString("username",null));
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
@@ -88,8 +92,27 @@ public class HomeTestActivity extends AppCompatActivity {
         mLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-//        mAdapter = new HomeAdapter(articles, getApplicationContext());
+//        mAdapter = new HomeAdapter(countries, getApplicationContext());
 //        mRecyclerView.setAdapter(mAdapter);
 
+    }
+
+    public void saveuserinfo() {
+        Call<User> apiCall = apiService.getUser(LoginUserInfo.getString("email",null));
+        apiCall.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                User user = response.body();
+                String name = user.getUserName();
+                editor.putString("username", name);
+                editor.commit();
+                Log.d("mytag", "username: "+name);
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+
+            }
+        });
     }
 }
