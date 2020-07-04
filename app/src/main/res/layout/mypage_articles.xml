@@ -35,10 +35,10 @@
             android:layout_width="wrap_content"
             android:textColor="#000000"
             android:layout_height="wrap_content"
-            android:text="userName"/>
+            android:text="UserName"/>
 
     </LinearLayout>
-    
+
     <LinearLayout
         android:id="@+id/usercontent"
         android:layout_width="match_parent"
@@ -57,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="30dp"
-            android:text="제목이나와요"/>
+            android:text="제목이 나와요"/>
 
         <TextView
             android:id="@+id/re_text2"

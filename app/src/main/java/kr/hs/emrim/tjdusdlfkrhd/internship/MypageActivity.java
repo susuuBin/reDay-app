@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TabHost;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -19,6 +20,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -27,29 +29,57 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MypageActivity extends AppCompatActivity {
-    SharedPreferences LoginUserInfo;
-    SharedPreferences.Editor editor;
-    RedayService apiService;
-    private Retrofit retrofit;
-    private Context mContext;
-    private MypageAdapter mypageAdapter;
-    private ArrayList<Article> mList;
-    private ArrayList<User> mUser;
-    private RecyclerView recyclerView;
-    private LinearLayoutManager linearLayoutManager;
-    protected TextView username;
-    protected TextView useremail;
+    SharedPreferences UserInfo;
+    private RecyclerView mRecyclerView;
+    protected String username;
+    public List<Article> articles;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mypage);
 
+        Retrofit retrofit = (new Retrofit.Builder()).baseUrl(RedayService.URL).addConverterFactory(GsonConverterFactory.create()).build();
+        final RedayService apiService = retrofit.create(RedayService.class);
+
+        mRecyclerView = findViewById(R.id.mypageView);
+        LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLinearLayoutManager);
+
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(mRecyclerView.getContext(), mLinearLayoutManager.getOrientation());
+        mRecyclerView.addItemDecoration(dividerItemDecoration);
+        final Call<List<Article>> apiCall = apiService.readArticlesData(username);
+
+        apiCall.enqueue(new Callback<List<Article>>() {
+            @Override
+            public void onResponse(Call<List<Article>> call, Response<List<Article>> response) {
+                articles = response.body();
+
+                MypageAdapter mAdapter = new MypageAdapter((ArrayList) articles);
+                mRecyclerView.setAdapter(mAdapter);
+
+                Log.d("mytag", articles.toString());
+            }
+
+            @Override
+            public void onFailure(Call<List<Article>> call, Throwable t) {
+                Log.d("mytag", "fail" + t.getMessage());
+            }
+        });
 
         ImageView mypage_backBtn = findViewById(R.id.mypage_backBtn);
         mypage_backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
+            }
+        });
+
+        ImageView mypage_homeBtn = findViewById(R.id.mypage_backBtn);
+        mypage_homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
             }
         });
 
@@ -64,18 +94,26 @@ public class MypageActivity extends AppCompatActivity {
         TabHost tabHost1 = (TabHost) findViewById(R.id.tabHost1) ;
         tabHost1.setup() ;
 
-        // 첫 번째 Tab. (탭 표시 텍스트:"TAB 1"), (페이지 뷰:"content1")
-        TabHost.TabSpec ts1 = tabHost1.newTabSpec("Tab Spec 1") ;
-        ts1.setContent(R.id.좋아요) ;
-        ts1.setIndicator("좋아요",getResources().getDrawable(R.drawable.toggle_mypage_heart));
-        tabHost1.addTab(ts1)  ;
+//        // 첫 번째 Tab. (탭 표시 텍스트:"TAB 1"), (페이지 뷰:"content1")
+//        TabHost.TabSpec ts1 = tabHost1.newTabSpec("Tab Spec 1") ;
+//        ts1.setContent(R.id.좋아요) ;
+//        ts1.setIndicator("좋아요",getResources().getDrawable(R.drawable.toggle_mypage_heart));
+//        tabHost1.addTab(ts1)  ;
 
-        // 두 번째 Tab. (탭 표시 텍스트:"TAB 2"), (페이지 뷰:"content2")
-        TabHost.TabSpec ts2 = tabHost1.newTabSpec("Tab Spec 2") ;
-        ts2.setContent(R.id.글) ;
-        ts2.setIndicator("글",getResources().getDrawable(R.drawable.toggle_mypage_write));
-        tabHost1.addTab(ts2) ;
+        TabHost.TabSpec ts1 = tabHost1.newTabSpec("Tab Spec 1") ;
+        ts1.setContent(R.id.글) ;
+        ts1.setIndicator("작성한 글",getResources().getDrawable(R.drawable.toggle_mypage_write));
+        tabHost1.addTab(ts1) ;
+
+        TextView name = findViewById(R.id.username);
+        TextView email = findViewById(R.id.useremail);
+
+        UserInfo = getSharedPreferences("userlogininfo", MODE_PRIVATE);
+        String nameText = UserInfo.getString("username",null);
+        name.setText(nameText);
+
+        String emailText = UserInfo.getString("email", null);
+        email.setText(emailText);
 
     }
-
 }

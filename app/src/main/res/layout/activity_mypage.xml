@@ -23,7 +23,7 @@
             app:srcCompat="@drawable/post_backbtn" />
 
         <ImageButton
-            android:id="@+id/mypagebtn"
+            android:id="@+id/mypage_homebtn"
             android:layout_width="40dp"
             android:layout_marginLeft="310dp"
             android:layout_marginTop="3dp"
@@ -100,22 +100,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <!-- 첫 번째 페이지. content1 -->
-                    <LinearLayout
-                        android:id="@+id/좋아요"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:padding="8dp"
-                            android:text="TAB CONTENT 1" />
-
-                    </LinearLayout>
-
                     <!-- 두 번째 페이지. content2 -->
                     <LinearLayout
                         android:id="@+id/글"
@@ -123,14 +107,12 @@
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
 
-                        <TextView
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/mypageView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:padding="8dp"
-                            android:text="TAB CONTENT 2"
+                            android:scrollbarAlwaysDrawVerticalTrack="true"
                             />
-
                     </LinearLayout>
                 </FrameLayout>
             </LinearLayout>

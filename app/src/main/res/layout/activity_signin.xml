@@ -66,43 +66,6 @@
         android:orientation="horizontal">
 
 
-
-        <Button
-            android:id="@+id/findId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#00ff0000"
-            android:fontFamily="@font/notosanscjkkr_demilight"
-            android:text="아이디 찾기"
-            android:textAlignment="center"
-            android:textColor="#676767"
-            android:textSize="14sp" />
-
-        <ImageView
-            android:id="@+id/line1"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ic_signin_line" />
-
-        <Button
-            android:id="@+id/findPwd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#00ff0000"
-            android:fontFamily="@font/notosanscjkkr_demilight"
-            android:text="비밀번호 찾기"
-            android:textAlignment="center"
-            android:textColor="#676767"
-            android:textSize="14sp" />
-
-        <ImageView
-            android:id="@+id/line2"
-            android:layout_width="40dp"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/ic_signin_line" />
-
         <Button
             android:id="@+id/signUp"
             android:layout_width="wrap_content"

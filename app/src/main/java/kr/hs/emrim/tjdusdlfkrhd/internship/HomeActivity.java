@@ -51,7 +51,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 saveuserinfo();
                 // 저장된 값을 불러오기 위해 같은 네임파일을 찾음.
-                Log.d("mytag", "앱 실행 시 유저 정보: "+LoginUserInfo.getString("username",null));
+                Log.d("mytag", "앱 실행 시 유저 정보: " + LoginUserInfo.getString("username",null));
                 startActivity(new Intent(getApplicationContext(), MypageActivity.class));
             }
         });
@@ -66,7 +66,7 @@ public class HomeActivity extends AppCompatActivity {
                 String name = user.getUserName();
                 editor.putString("username", name);
                 editor.commit();
-                Log.d("mytag", "username: "+name);
+                Log.d("mytag", "username: "+ name);
             }
 
             @Override

@@ -78,7 +78,7 @@ public class WriteActivity extends AppCompatActivity {
         username = LoginUserInfo.getString("username",null);
         Log.d("mytag", "username: "+username);
         if(username == null) {
-            Toast.makeText(WriteActivity.this, "로그인을 해주세요.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(WriteActivity.this, "로그인을 해 주세요.", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(getApplicationContext(), SignInActivity.class));
             finish();
         }
@@ -143,7 +143,7 @@ public class WriteActivity extends AppCompatActivity {
                 Log.d("mytag", intent.getData().toString());
                 // 인텐트에 데이터가 담겨있다면
                 if(!intent.getData().equals(null)) {
-                    // intent에 담긴 이미지를 uri를 이용해서 bitmap 형태로 읽어온다.
+                    // intent에 담긴 이미지를 uri를 이용해서 bitmap 형태로 읽어 온다.
                     selPhoto = MediaStore.Images.Media.getBitmap(getContentResolver(), intent.getData());
                     selPhoto = Bitmap.createScaledBitmap(selPhoto, 500, 500, true);
                     showPicture.setImageBitmap(selPhoto);

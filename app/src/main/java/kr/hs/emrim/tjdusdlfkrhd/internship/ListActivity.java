@@ -32,14 +32,11 @@ public class ListActivity extends AppCompatActivity {
     private ImageView mypageBtn;
     public List<Article> articles;
     RecyclerView mRecyclerView;
-    LinearLayout usercontent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-
-        usercontent = (LinearLayout) findViewById(R.id.container);
 
         retrofit = new Retrofit.Builder().baseUrl(RedayService.URL).addConverterFactory(GsonConverterFactory.create()).build();
         final RedayService apiService = retrofit.create(RedayService.class);
@@ -94,15 +91,5 @@ public class ListActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), WriteActivity.class));
             }
         });
-
-//        ImageView comment_btn = findViewById(R.id.comment_btn);
-//        comment_btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(getApplicationContext(), CommentActivity.class));
-//            }
-//        });
-
-
     }
 }

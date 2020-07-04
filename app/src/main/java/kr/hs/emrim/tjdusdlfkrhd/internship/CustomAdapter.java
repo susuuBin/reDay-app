@@ -1,5 +1,6 @@
 package kr.hs.emrim.tjdusdlfkrhd.internship;
 
+import android.net.Uri;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -11,9 +12,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.File;
 import java.util.ArrayList;
 
-public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder> {
+    public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder> {
     private ArrayList<Article> mList;
 
     public class CustomViewHolder extends RecyclerView.ViewHolder {
@@ -21,18 +23,16 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         protected TextView re_text1;
         protected TextView re_text2;
         protected TextView heart;
-        protected TextView re_image;
+        protected ImageView re_image;
 
 
          public CustomViewHolder(View view){
             super(view);
-             re_username= itemView.findViewById(R.id.re_username);
-            //this.id = view.findViewById(R.id.id);
+             this.re_username= (TextView)view.findViewById(R.id.re_username);
              this.re_text1=(TextView)view.findViewById(R.id.re_text1);
              this.re_text2 = (TextView) view.findViewById(R.id.re_text2);
-            // this.heart = (TextView) view.findViewById(R.id.heart);
-          //this.re_image = (TextView) view.findViewById(R.id.re_image);
-
+             this.heart = (TextView) view.findViewById(R.id.count_heart);
+             this.re_image = (ImageView) view.findViewById(R.id.re_image);
         }
     }
     public CustomAdapter(ArrayList<Article> list){
@@ -52,7 +52,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         viewHolder.re_username.setGravity(Gravity.CENTER);
         viewHolder.re_username.setText(Integer.toString(mList.get(position).getId()));
 
-
         viewHolder.re_text1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
         viewHolder.re_text1.setGravity(Gravity.CENTER);
         viewHolder.re_text1.setText(mList.get(position).getTitle());
@@ -61,15 +60,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         viewHolder.re_text2.setGravity(Gravity.CENTER);
         viewHolder.re_text2.setText(mList.get(position).getContents());
 
-//        viewHolder.heart.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
-  //      viewHolder.heart.setGravity(Gravity.CENTER);
-    //    viewHolder.heart.setText(Integer.toString(mList.get(position).getHeart()));
+       viewHolder.heart.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
+       viewHolder.heart.setGravity(Gravity.CENTER);
+       viewHolder.heart.setText(Integer.toString(mList.get(position).getHeart()));
 
-        /*
-        viewHolder.file_location.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
-        viewHolder.file_location.setGravity(Gravity.CENTER);
-        viewHolder.file_location.setText(mList.get(position).getHeart()); // 쓸데없는 거임.
-        */
+//        viewHolder.re_image.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
+//        viewHolder.re_image.setGravity(Gravity.CENTER);
+        viewHolder.re_image.setImageURI(Uri.fromFile(new File(String.valueOf(mList.get(position).getFile())))); // 쓸데없는 거임.
     }
 
     @Override

@@ -75,7 +75,7 @@ public class SignInActivity extends AppCompatActivity {
                                 saveuserinfo();
                                 editor.commit();
                                 Log.d("mytag", LoginUserInfo.getString("email",null)+", "+LoginUserInfo.getString("password",null));
-                                startActivity(new Intent(getApplicationContext(), HomeTestActivity.class));
+                                startActivity(new Intent(getApplicationContext(), HomeActivity.class));
                                 finish();
                             }
                             else {

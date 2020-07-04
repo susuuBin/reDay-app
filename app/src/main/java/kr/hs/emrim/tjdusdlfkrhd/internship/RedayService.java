@@ -26,12 +26,11 @@ public interface RedayService {
     @POST("{username}/articles")
     Call<String> createArticle(@Path("username") String username, @Query("title") String title, @Query("contents") String contents, @Part MultipartBody.Part file);
 
-    /*
     // 유저 이름 가져오기.
+   /*
     @GET("{email}/getusername")
     Call<String> getUsername(@Path("email") String email);
     */
-
     @GET("/users/{email}")
     Call<User> getUser(@Path("email") String email);
 
@@ -42,5 +41,9 @@ public interface RedayService {
     Call<List<Countries>> readCountriesDataAll();
 
     @GET("{country}/articles")
-    Call<List<Article>> readCountryAtriclesDataAll(@Path("country") String country);
+    Call<List<Article>> readCountryArticlesDataAll(@Path("country") String country);
+
+    @GET("{username}/articles")
+    Call<List<Article>> readArticlesData(@Path("username") String username);
+
 }
