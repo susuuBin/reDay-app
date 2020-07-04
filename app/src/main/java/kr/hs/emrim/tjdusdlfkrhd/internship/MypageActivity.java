@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,8 +20,10 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,6 +35,7 @@ public class MypageActivity extends AppCompatActivity {
     SharedPreferences UserInfo;
     private RecyclerView mRecyclerView;
     protected String username;
+    private String email;
     public List<Article> articles;
 
     @Override
@@ -48,7 +52,11 @@ public class MypageActivity extends AppCompatActivity {
 
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(mRecyclerView.getContext(), mLinearLayoutManager.getOrientation());
         mRecyclerView.addItemDecoration(dividerItemDecoration);
-        final Call<List<Article>> apiCall = apiService.readArticlesData(username);
+
+        email = Objects.requireNonNull(getIntent().getExtras()).getString("email");
+        System.out.println("MyPageActivity email ="+ email);
+
+        final Call<List<Article>> apiCall = apiService.readArticlesData(email);
 
         apiCall.enqueue(new Callback<List<Article>>() {
             @Override
@@ -65,6 +73,8 @@ public class MypageActivity extends AppCompatActivity {
             public void onFailure(Call<List<Article>> call, Throwable t) {
                 Log.d("mytag", "fail" + t.getMessage());
             }
+
+
         });
 
         ImageView mypage_backBtn = findViewById(R.id.mypage_backBtn);

@@ -22,6 +22,7 @@ public class Article {
     public String getContents() {
         return contents;
     }
+
     public void setContents(String contents) {
         this.contents = contents;
     }
@@ -34,7 +35,7 @@ public class Article {
         this.title = title;
     }
 
-   public int getHeart() {
+    public int getHeart() {
         return heart;
     }
 
@@ -60,11 +61,12 @@ public class Article {
 
     public MultipartBody.Part getFile() {
         return file;
-
     }
+
     public void setFile(MultipartBody.Part file) {
         this.file = file;
     }
+
     @Override
     public String toString() {
         return "Article{" +

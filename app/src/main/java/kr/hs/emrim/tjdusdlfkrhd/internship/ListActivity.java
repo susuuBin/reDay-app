@@ -2,6 +2,7 @@ package kr.hs.emrim.tjdusdlfkrhd.internship;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
@@ -33,10 +34,14 @@ public class ListActivity extends AppCompatActivity {
     public List<Article> articles;
     RecyclerView mRecyclerView;
 
+    SharedPreferences LoginUserInfo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+
+        LoginUserInfo = getSharedPreferences("userlogininfo", MODE_PRIVATE);
 
         retrofit = new Retrofit.Builder().baseUrl(RedayService.URL).addConverterFactory(GsonConverterFactory.create()).build();
         final RedayService apiService = retrofit.create(RedayService.class);
@@ -71,8 +76,13 @@ public class ListActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // 저장된 값을 불러오기 위해 같은 네임파일을 찾음.
-//                Log.d("mytag", "앱 실행 시 유저 정보: "+LoginUserInfo.getString("username",null));
-                startActivity(new Intent(getApplicationContext(), MypageActivity.class));
+
+
+                String email = LoginUserInfo.getString("email",null);
+                Log.d("mytag", "앱 실행 시 유저 정보: " +email);
+                Intent intent  = new Intent(getApplicationContext(), MypageActivity.class);;
+                intent.putExtra("email", email);
+                startActivity(intent);
             }
         });
 
@@ -91,5 +101,15 @@ public class ListActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), WriteActivity.class));
             }
         });
+
+//        ImageView comment_btn = findViewById(R.id.comment_btn);
+//        comment_btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(getApplicationContext(), CommentActivity.class));
+//            }
+//        });
+
+
     }
 }
