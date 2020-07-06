@@ -20,7 +20,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HomeActivity extends AppCompatActivity {
-
     SharedPreferences LoginUserInfo;
     SharedPreferences.Editor editor;
 
@@ -51,8 +50,12 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 saveuserinfo();
                 // 저장된 값을 불러오기 위해 같은 네임파일을 찾음.
-                Log.d("mytag", "앱 실행 시 유저 정보: " + LoginUserInfo.getString("username",null));
-                startActivity(new Intent(getApplicationContext(), MypageActivity.class));
+               // Log.d("mytag", "앱 실행 시 유저 정보 : " + LoginUserInfo.getString("username",null));
+                String email = LoginUserInfo.getString("email",null);
+                Log.d("mytag", "앱 실행 시 유저 정보: " + email);
+                Intent intent  = new Intent(getApplicationContext(), MypageActivity.class);;
+                intent.putExtra("email", email);
+                startActivity(intent);
             }
         });
     }
@@ -65,6 +68,7 @@ public class HomeActivity extends AppCompatActivity {
                 User user = response.body();
                 String name = user.getUserName();
                 editor.putString("username", name);
+                editor.putString("email", user.getEmail());
                 editor.commit();
                 Log.d("mytag", "username: "+ name);
             }

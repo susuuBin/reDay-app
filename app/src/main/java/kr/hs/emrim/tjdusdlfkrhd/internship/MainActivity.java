@@ -62,7 +62,11 @@ public class MainActivity extends AppCompatActivity {
         mypageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), MypageActivity.class));
+                String email = LoginUserInfo.getString("email",null);
+                Log.d("mytag", "앱 실행 시 유저 정보: " + email);
+                Intent intent  = new Intent(getApplicationContext(), MypageActivity.class);;
+                intent.putExtra("email", email);
+                startActivity(intent);
             }
         });
     }

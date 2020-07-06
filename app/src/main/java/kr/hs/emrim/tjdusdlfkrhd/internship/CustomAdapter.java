@@ -1,6 +1,8 @@
 package kr.hs.emrim.tjdusdlfkrhd.internship;
 
+import android.graphics.Bitmap;
 import android.net.Uri;
+import android.provider.MediaStore;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -24,7 +26,7 @@ import java.util.ArrayList;
         protected TextView re_text2;
         protected TextView heart;
         protected ImageView re_image;
-
+        private Bitmap selPhoto;
 
          public CustomViewHolder(View view){
             super(view);
@@ -65,8 +67,9 @@ import java.util.ArrayList;
        viewHolder.heart.setText(Integer.toString(mList.get(position).getHeart()));
 
 //        viewHolder.re_image.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
-//        viewHolder.re_image.setGravity(Gravity.CENTER);
-        viewHolder.re_image.setImageURI(Uri.fromFile(new File(String.valueOf(mList.get(position).getFile())))); // 쓸데없는 거임.
+////        viewHolder.re_image.setGravity(Gravity.CENTER);
+//        viewHolder.re_image.setImageURI(Uri.fromFile(new File(String.valueOf(mList.get(position).getFile())))); // 쓸데없는 거임.
+
     }
 
     @Override

@@ -10,6 +10,16 @@ public class Article {
     private MultipartBody.Part file;
     private int user_id;
     private int country_id;
+    private String userName;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
 
     public int getId() {
         return id;

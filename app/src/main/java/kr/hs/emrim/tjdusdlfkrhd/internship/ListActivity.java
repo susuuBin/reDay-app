@@ -76,10 +76,8 @@ public class ListActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // 저장된 값을 불러오기 위해 같은 네임파일을 찾음.
-
-
                 String email = LoginUserInfo.getString("email",null);
-                Log.d("mytag", "앱 실행 시 유저 정보: " +email);
+                Log.d("mytag", "앱 실행 시 유저 정보: " + email);
                 Intent intent  = new Intent(getApplicationContext(), MypageActivity.class);;
                 intent.putExtra("email", email);
                 startActivity(intent);

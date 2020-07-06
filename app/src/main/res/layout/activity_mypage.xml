@@ -111,6 +111,7 @@
                             android:id="@+id/mypageView"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                             android:scrollbarAlwaysDrawVerticalTrack="true"
                             />
                     </LinearLayout>

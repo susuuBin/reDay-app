@@ -1,6 +1,8 @@
 package kr.hs.emrim.tjdusdlfkrhd.internship;
 
+import android.content.SharedPreferences;
 import android.net.Uri;
+import android.text.NoCopySpan;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -32,6 +34,7 @@ public class MypageAdapter extends RecyclerView.Adapter<MypageAdapter.CustomView
             this.re_text2 = (TextView) view.findViewById(R.id.re_text2);
             this.heart = (TextView) view.findViewById(R.id.count_heart);
             this.re_image = (ImageView) view.findViewById(R.id.re_image);
+
         }
     }
 
@@ -48,9 +51,10 @@ public class MypageAdapter extends RecyclerView.Adapter<MypageAdapter.CustomView
 
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder viewHolder, int position){
+
         viewHolder.re_username.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
         viewHolder.re_username.setGravity(Gravity.CENTER);
-        viewHolder.re_username.setText(mList.get(position).getTitle());
+        viewHolder.re_username.setText(mList.get(position).getUserName());
 
         viewHolder.re_text1.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
         viewHolder.re_text1.setGravity(Gravity.CENTER);
@@ -66,11 +70,13 @@ public class MypageAdapter extends RecyclerView.Adapter<MypageAdapter.CustomView
 
         // viewHolder.re_image.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
         // viewHolder.re_image.setGravity(Gravity.CENTER);
-        viewHolder.re_image.setImageURI(Uri.fromFile(new File(String.valueOf(mList.get(position).getFile())))); // 쓸데없는 거임.
-    }
+        viewHolder.re_image.setImageURI(Uri.fromFile(new File(String.valueOf(mList.get(position).getFile()))));
+}
 
     @Override
     public int getItemCount(){
         return (null != mList ? mList.size() : 0);
     }
+
+
 }
