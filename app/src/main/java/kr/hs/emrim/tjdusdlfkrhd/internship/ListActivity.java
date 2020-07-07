@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -26,7 +27,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ListActivity extends AppCompatActivity {
-    LinearLayout list;
+    private TextView textView2;
+    private Context mContext;
     private Retrofit retrofit;
     private ImageView postingbtn;
     private ImageView post_backBtn;
@@ -35,11 +37,13 @@ public class ListActivity extends AppCompatActivity {
     RecyclerView mRecyclerView;
 
     SharedPreferences LoginUserInfo;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+        mContext=this;
 
         LoginUserInfo = getSharedPreferences("userlogininfo", MODE_PRIVATE);
 
@@ -50,9 +54,19 @@ public class ListActivity extends AppCompatActivity {
         LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLinearLayoutManager);
 
+        //나라별
+        SharedPreferences CountryInfo = mContext.getSharedPreferences("CountryInfo",MODE_PRIVATE);
+        String Country = CountryInfo.getString("Country", " ㅎ럴");
+        String City = CountryInfo.getString("City", " ㅎ럴");
+
+        Log.d("제발 나라 도시", "진짜야?: "+Country + City);
+
+        textView2 = findViewById(R.id.textView2); //도시 이름 표시
+        textView2.setText(City);
+
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(mRecyclerView.getContext(), mLinearLayoutManager.getOrientation());
         mRecyclerView.addItemDecoration(dividerItemDecoration);
-        final Call<List<Article>> apiCall = apiService.readArticlesDataAll();
+        final Call<List<Article>> apiCall = apiService.readCountryArticlesDataAll(Country);
 
         apiCall.enqueue(new Callback<List<Article>>() {
             @Override
@@ -61,7 +75,6 @@ public class ListActivity extends AppCompatActivity {
 
                 CustomAdapter mAdapter = new CustomAdapter((ArrayList) articles);
                 mRecyclerView.setAdapter(mAdapter);
-
                 Log.d("mytag", articles.toString());
             }
 

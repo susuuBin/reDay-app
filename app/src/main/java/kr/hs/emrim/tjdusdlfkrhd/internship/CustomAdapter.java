@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.io.File;
 import java.util.ArrayList;
 
-    public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder> {
+public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder> {
     private ArrayList<Article> mList;
 
     public class CustomViewHolder extends RecyclerView.ViewHolder {
@@ -28,13 +28,13 @@ import java.util.ArrayList;
         protected ImageView re_image;
         private Bitmap selPhoto;
 
-         public CustomViewHolder(View view){
+        public CustomViewHolder(View view){
             super(view);
-             this.re_username= (TextView)view.findViewById(R.id.re_username);
-             this.re_text1=(TextView)view.findViewById(R.id.re_text1);
-             this.re_text2 = (TextView) view.findViewById(R.id.re_text2);
-             this.heart = (TextView) view.findViewById(R.id.count_heart);
-             this.re_image = (ImageView) view.findViewById(R.id.re_image);
+            this.re_username= (TextView)view.findViewById(R.id.re_username);
+            this.re_text1=(TextView)view.findViewById(R.id.re_text1);
+            this.re_text2 = (TextView) view.findViewById(R.id.re_text2);
+            this.heart = (TextView) view.findViewById(R.id.count_heart);
+            this.re_image = (ImageView) view.findViewById(R.id.re_image);
         }
     }
     public CustomAdapter(ArrayList<Article> list){
@@ -62,9 +62,9 @@ import java.util.ArrayList;
         viewHolder.re_text2.setGravity(Gravity.CENTER);
         viewHolder.re_text2.setText(mList.get(position).getContents());
 
-       viewHolder.heart.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
-       viewHolder.heart.setGravity(Gravity.CENTER);
-       viewHolder.heart.setText(Integer.toString(mList.get(position).getHeart()));
+        viewHolder.heart.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
+        viewHolder.heart.setGravity(Gravity.CENTER);
+        viewHolder.heart.setText(Integer.toString(mList.get(position).getHeart()));
 
 //        viewHolder.re_image.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
 ////        viewHolder.re_image.setGravity(Gravity.CENTER);

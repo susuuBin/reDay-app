@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/notosanscjkkr_demilight"
-        android:text="나라 선택"
+        android:text="나라선택"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="20sp" />
@@ -58,7 +58,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
 
                     <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -78,7 +78,7 @@
                         android:layout_height="wrap_content"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="대한민국" />
+                        android:text="Korea" />
 
                     <TextView
                         android:id="@+id/card1_city"
@@ -88,7 +88,7 @@
                         android:fontFamily="@font/notosanscjkkr_demilight"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="서울"
+                        android:text="Seoul"
                         android:textColor="#000000"
                         android:textSize="18sp" />
                 </LinearLayout>
@@ -128,7 +128,7 @@
                         android:layout_height="wrap_content"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="일본" />
+                        android:text="Japan" />
 
                     <TextView
                         android:id="@+id/card2_city"
@@ -138,7 +138,7 @@
                         android:fontFamily="@font/notosanscjkkr_demilight"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="오사카"
+                        android:text="Osaka"
                         android:textColor="#000000"
                         android:textSize="18sp" />
                 </LinearLayout>
@@ -176,7 +176,7 @@
                         android:layout_height="wrap_content"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="미국" />
+                        android:text="U.S.A." />
 
                     <TextView
                         android:id="@+id/card3_city"
@@ -186,7 +186,7 @@
                         android:fontFamily="@font/notosanscjkkr_demilight"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="뉴욕"
+                        android:text="Newyork"
                         android:textColor="#000000"
                         android:textSize="18sp" />
                 </LinearLayout>
@@ -226,7 +226,7 @@
                         android:layout_height="wrap_content"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="미국" />
+                        android:text="U.S.A." />
 
                     <TextView
                         android:id="@+id/card4_city"
@@ -236,7 +236,7 @@
                         android:fontFamily="@font/notosanscjkkr_demilight"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="라스베가스"
+                        android:text="Lasvegas"
                         android:textColor="#000000"
                         android:textSize="18sp" />
                 </LinearLayout>
@@ -274,7 +274,7 @@
                         android:layout_height="wrap_content"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="태국" />
+                        android:text="Thailand" />
 
                     <TextView
                         android:id="@+id/card5_city"
@@ -284,7 +284,7 @@
                         android:fontFamily="@font/notosanscjkkr_demilight"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="방콕"
+                        android:text="Bangkok"
                         android:textColor="#000000"
                         android:textSize="18sp" />
                 </LinearLayout>
@@ -324,7 +324,7 @@
                         android:layout_height="wrap_content"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="영국" />
+                        android:text="U.K." />
 
                     <TextView
                         android:id="@+id/card6_city"
@@ -334,7 +334,7 @@
                         android:fontFamily="@font/notosanscjkkr_demilight"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="런던"
+                        android:text="London"
                         android:textColor="#000000"
                         android:textSize="18sp" />
                 </LinearLayout>
@@ -372,7 +372,7 @@
                         android:layout_height="wrap_content"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="페루" />
+                        android:text="Peru" />
 
                     <TextView
                         android:id="@+id/card7_city"
@@ -382,7 +382,7 @@
                         android:fontFamily="@font/notosanscjkkr_demilight"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="마추픽추"
+                        android:text="Machupicchu"
                         android:textColor="#000000"
                         android:textSize="18sp" />
                 </LinearLayout>
@@ -422,7 +422,7 @@
                         android:layout_height="wrap_content"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="볼리비아" />
+                        android:text="Bolivia" />
 
                     <TextView
                         android:id="@+id/card8_city"
@@ -432,7 +432,7 @@
                         android:fontFamily="@font/notosanscjkkr_demilight"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="살라드 데"
+                        android:text="Salarde"
                         android:textColor="#000000"
                         android:textSize="18sp" />
                 </LinearLayout>
@@ -470,7 +470,7 @@
                         android:layout_height="wrap_content"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="프랑스" />
+                        android:text="France" />
 
                     <TextView
                         android:id="@+id/card9_city"
@@ -480,7 +480,7 @@
                         android:fontFamily="@font/notosanscjkkr_demilight"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="파리"
+                        android:text="Paris"
                         android:textColor="#000000"
                         android:textSize="18sp" />
                 </LinearLayout>
@@ -520,7 +520,7 @@
                         android:layout_height="wrap_content"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="이탈리아" />
+                        android:text="Italia" />
 
                     <TextView
                         android:id="@+id/card10_city"
@@ -530,7 +530,7 @@
                         android:fontFamily="@font/notosanscjkkr_demilight"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="로마"
+                        android:text="Rome"
                         android:textColor="#000000"
                         android:textSize="18sp" />
                 </LinearLayout>
@@ -568,7 +568,7 @@
                         android:layout_height="wrap_content"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="오스트레일리아" />
+                        android:text="Australia" />
 
                     <TextView
                         android:id="@+id/card11_city"
@@ -578,7 +578,7 @@
                         android:fontFamily="@font/notosanscjkkr_demilight"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="시드니"
+                        android:text="Sydney"
                         android:textColor="#000000"
                         android:textSize="18sp" />
                 </LinearLayout>
@@ -628,7 +628,7 @@
                         android:fontFamily="@font/notosanscjkkr_demilight"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="키리바시"
+                        android:text="Kiribati"
                         android:textColor="#000000"
                         android:textSize="18sp" />
                 </LinearLayout>
@@ -666,7 +666,7 @@
                         android:layout_height="wrap_content"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="캐나다" />
+                        android:text="Canada" />
 
                     <TextView
                         android:id="@+id/card13_city"
@@ -676,7 +676,7 @@
                         android:fontFamily="@font/notosanscjkkr_demilight"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="몬트리올"
+                        android:text="Montreal"
                         android:textColor="#000000"
                         android:textSize="18sp" />
                 </LinearLayout>
@@ -716,7 +716,7 @@
                         android:layout_height="wrap_content"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="캐나다" />
+                        android:text="Canada" />
 
                     <TextView
                         android:id="@+id/card14_city"
@@ -726,7 +726,7 @@
                         android:fontFamily="@font/notosanscjkkr_demilight"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="벤쿠버"
+                        android:text="Vancouver"
                         android:textColor="#000000"
                         android:textSize="18sp" />
                 </LinearLayout>
@@ -774,7 +774,7 @@
                         android:fontFamily="@font/notosanscjkkr_demilight"
                         android:foregroundGravity="center"
                         android:gravity="center"
-                        android:text="탄자니아"
+                        android:text="Tanzania"
                         android:textColor="#000000"
                         android:textSize="18sp" />
                 </LinearLayout>

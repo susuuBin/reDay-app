@@ -38,7 +38,7 @@
             android:text="userName"/>
 
     </LinearLayout>
-    
+
     <LinearLayout
         android:id="@+id/usercontent"
         android:layout_width="match_parent"

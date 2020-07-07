@@ -40,7 +40,7 @@ public interface RedayService {
     @GET("all_countries")
     Call<List<Countries>> readCountriesDataAll();
 
-    @GET("{country}/articles")
+    @GET("countries/{country}/articles")
     Call<List<Article>> readCountryArticlesDataAll(@Path("country") String country);
 
 //    @GET("{username}/articles")

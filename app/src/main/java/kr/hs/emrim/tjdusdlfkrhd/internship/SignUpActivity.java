@@ -23,7 +23,7 @@ public class SignUpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);  // layout xml 과 자바파일을 연결
+        setContentView(R.layout.activity_signup);  // layout xml 과 자바 파일을 연결
 
         // retrofit
         Retrofit retrofit = (new Retrofit.Builder()).baseUrl(RedayService.URL).addConverterFactory(GsonConverterFactory.create()).build();
@@ -43,7 +43,7 @@ public class SignUpActivity extends AppCompatActivity {
                 String usernickname = usernicknameEdit.getText().toString();
                 String useremail = useremailEdit.getText().toString();
                 if(!(userpasswordEdit.getText().toString().equals(userpasswordchkEdit.getText().toString()))) {
-                    Toast.makeText(SignUpActivity.this, "비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUpActivity.this, "비밀번호를 확인해 주세요.", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     String userpassword = userpasswordEdit.getText().toString();

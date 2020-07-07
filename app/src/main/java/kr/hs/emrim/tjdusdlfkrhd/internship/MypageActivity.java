@@ -54,7 +54,7 @@ public class MypageActivity extends AppCompatActivity {
         mRecyclerView.addItemDecoration(dividerItemDecoration);
 
         email = Objects.requireNonNull(getIntent().getExtras()).getString("email");
-        System.out.println("MyPageActivity email ="+ email);
+        System.out.println("MyPageActivity email = "+ email);
 
         final Call<List<Article>> apiCall = apiService.readArticlesData(email);
 

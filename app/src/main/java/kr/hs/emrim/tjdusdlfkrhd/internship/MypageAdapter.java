@@ -70,7 +70,7 @@ public class MypageAdapter extends RecyclerView.Adapter<MypageAdapter.CustomView
 
         // viewHolder.re_image.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
         // viewHolder.re_image.setGravity(Gravity.CENTER);
-        viewHolder.re_image.setImageURI(Uri.fromFile(new File(String.valueOf(mList.get(position).getFile()))));
+//        viewHolder.re_image.setImageURI(Uri.fromFile(new File(String.valueOf(mList.get(position).getFile()))));
 }
 
     @Override
